@@ -8,14 +8,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pedrom.sprintboot.di.app.sprintbootdi.models.Product;
-import com.pedrom.sprintboot.di.app.sprintbootdi.services.ProductService;
+import com.pedrom.sprintboot.di.app.sprintbootdi.services.ProductServiceImpl;
 
 
 @RestController
 @RequestMapping("/api")
 public class SomeController {
 
-    private ProductService service = new ProductService();
+    private ProductServiceImpl service = new ProductServiceImpl();
     @GetMapping
     public List<Product> list(){
         return service.findAll();

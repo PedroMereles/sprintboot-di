@@ -1,6 +1,6 @@
 package com.pedrom.sprintboot.di.app.sprintbootdi.models;
 
-public class Product {
+public class Product implements Cloneable{
 
     private Long id;
     private Long price;
@@ -39,4 +39,16 @@ public class Product {
         this.name = name;
     }
 
+    @Override
+    public Object clone()  {
+        // TODO Auto-generated method stub
+        try {
+            return super.clone();
+        } catch (CloneNotSupportedException e) {
+            // TODO Auto-generated catch block
+            return new Product(this.getId(), this.getName(), this.getPrice());
+        }
+    }
+
+    
 }
